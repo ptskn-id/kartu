@@ -7,10 +7,10 @@
 .tag .zona{position:relative;flex:1;overflow:hidden;
   background:radial-gradient(90% 70% at 78% 8%,#22335a 0%,rgba(34,51,90,0) 65%),linear-gradient(165deg,#16223d 0%,#0c1424 58%,#080d18 100%)}
 .tag .latar{position:absolute;width:66mm;max-width:none;left:-21mm;bottom:-17mm;opacity:.62}
-.tag .merek{position:absolute;left:4mm;top:4.5mm;display:flex;flex-direction:column;align-items:flex-start;gap:.9mm}
-.tag .merek img{display:block;height:3.3mm;width:auto}
-.tag .merek img.uni{height:3.7mm}
-.tag .merek i{display:block;width:5mm;height:.15mm;background:var(--gold-l);opacity:.6}
+.tag .merek{position:absolute;left:4mm;top:4.6mm;height:3.2mm;display:flex;align-items:center;gap:.9mm}
+.tag .merek img{display:block;height:2.5mm;width:auto}
+.tag .merek img.uni{height:2.9mm}
+.tag .merek i{display:block;width:.15mm;height:3mm;background:var(--gold-l);opacity:.6}
 .tag .visi{position:absolute;right:4mm;top:4.6mm;width:27mm;text-align:right;font-family:"Cinzel",var(--serif);font-weight:700;
   font-size:2.05mm;line-height:1.45;letter-spacing:.12em;text-transform:uppercase;color:#fff}
 .tag .visi::after{content:"";display:block;width:7mm;height:.35mm;margin:1.3mm 0 0 auto;background:var(--gold-l)}
