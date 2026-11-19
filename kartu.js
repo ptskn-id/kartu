@@ -16,7 +16,7 @@
       aman(o.fokus || "50% 20%") + '">' : siluet + '<div class="inisial">' + aman(sknInisial(o.nama)) + '</div>';
     var kode = sknQR(url) + '<div>' + aman(ketQR || "Pindai kontak") + '</div>';
     return '<div class="tag"><div class="zona"><img class="latar" src="ikon.png" alt="">' +
-      '<img class="merek" src="logo.png" alt="SKN"><div class="visi">' + VISI + '</div>' +
+      '<div class="merek"><img src="logo.png" alt="SKN"><i></i><img class="uni" src="unistar.png" alt="Unistar Cellular"></div><div class="visi">' + VISI + '</div>' +
       '<div class="orang' + (o.foto ? (o.potong ? " potong" : " bingkai") : "") + '">' + orang + '</div></div>' +
       '<div class="garis"></div><div class="strip"><div class="info">' +
       '<div class="nama' + (o.nama.length > 14 ? " panjang" : "") + '">' + aman(o.nama) + '</div>' +
