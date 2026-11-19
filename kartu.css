@@ -27,6 +27,7 @@
 .tag .nama{font-family:var(--serif);font-weight:600;font-size:4.1mm;line-height:1.12}
 .tag .nama.panjang{font-size:3.5mm}
 .tag .jab{font-size:1.75mm;letter-spacing:.2em;text-transform:uppercase;color:var(--red);font-weight:600;margin-top:1.5mm;line-height:1.4}
+.tag .jab.rapat{font-size:1.6mm;letter-spacing:.07em;white-space:nowrap}
 .tag .wil{font-size:2.15mm;color:var(--muted);margin-top:.7mm}
 .tag .kode{display:block;flex:none;width:23.5mm;text-align:center;text-decoration:none}
 .tag .kode svg{display:block;width:100%;height:auto}

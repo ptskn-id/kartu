@@ -20,7 +20,7 @@
       '<div class="orang' + (o.foto ? (o.potong ? " potong" : " bingkai") : "") + '">' + orang + '</div></div>' +
       '<div class="garis"></div><div class="strip"><div class="info">' +
       '<div class="nama' + (o.nama.length > 14 ? " panjang" : "") + '">' + aman(o.nama) + '</div>' +
-      '<div class="jab">' + aman(o.jabatan) + '</div>' +
+      '<div class="jab' + (String(o.jabatan).length > 14 ? " rapat" : "") + '">' + aman(o.jabatan) + '</div>' +
       (o.wilayah ? '<div class="wil">Wilayah ' + aman(o.wilayah) + '</div>' : "") + '</div>' +
       (tautQR ? '<a class="kode" href="' + url + '">' + kode + '</a>' : '<div class="kode">' + kode + '</div>') +
       '</div></div>';
