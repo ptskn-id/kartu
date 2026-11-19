@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#070b14">
+<title>ID Card Digital SKN</title>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PT Satelit Komunika Nusantara">
+<meta property="og:title" content="ID Card Digital SKN">
+<meta property="og:description" content="Kontak resmi dan status karyawan PT Satelit Komunika Nusantara.">
+<meta property="og:image" content="https://ptskn-id.github.io/kartu/pratinjau.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="ikon.png">
+<link rel="apple-touch-icon" href="ikon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="ID Card SKN">
+<script>/* Chrome menawarkan pemasangan: simpan dulu, dipakai saat tombol "Pasang di layar utama" diketuk. */
+window.addEventListener("beforeinstallprompt", function (e) { e.preventDefault(); window.sknPasang = e; });</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="kartu.css">
+<style>
+:root{--ink:#0c1424;--deep:#070b14;--ivory:#f3efe7;--soft:#a7afbf;--red:#d5505a;--gold:#b3925a;--gold-l:#dcc296;
+  --hair:rgba(220,194,150,.28);--rule:rgba(255,255,255,.09);
+  --serif:"Playfair Display",Georgia,serif;--sans:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--deep);color:var(--ivory);font-family:var(--sans);font-size:16px;line-height:1.5;min-height:100vh;
+  display:flex;justify-content:center;
+  background-image:radial-gradient(90% 46% at 50% 0%,#1a2845 0%,rgba(26,40,69,0) 70%)}
+.hal{position:relative;width:100%;max-width:440px;padding:26px 22px 34px}
+
+.label{text-align:center;font-size:9.5px;letter-spacing:.34em;text-transform:uppercase;color:var(--gold-l);margin-bottom:18px}
+.label b{display:inline-block;margin-left:8px;padding:2px 8px;background:var(--red);color:#fff;font-weight:600;letter-spacing:.16em}
+
+/* Kartu sisi depan: ukuran asli 54 x 86 mm, diperbesar supaya pas di layar */
+.panggung{position:relative;width:min(100%,348px);aspect-ratio:54/86;margin:0 auto;-webkit-tap-highlight-color:transparent}
+.skala{position:absolute;left:0;top:0;width:54mm;height:86mm;transform-origin:0 0}
+.balik{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .8s cubic-bezier(.3,.7,.2,1)}
+.panggung.terbalik .balik{transform:rotateY(180deg)}
+.balik .tag{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;
+  box-shadow:0 6mm 14mm rgba(0,0,0,.55),0 0 0 .2mm rgba(220,194,150,.35)}
+.balik .tag.belakang{transform:rotateY(180deg)}
+.panggung.mati .tag{filter:grayscale(1) brightness(.75)}
+.cap{position:absolute;z-index:3;left:50%;top:40%;transform:translate(-50%,-50%) rotate(-12deg);padding:8px 18px;
+  border:2px solid var(--red);color:#fff;background:rgba(150,20,30,.82);font-weight:600;letter-spacing:.24em;font-size:14px;
+  text-transform:uppercase;white-space:nowrap}
+.padam{opacity:.34;filter:grayscale(1);pointer-events:none;user-select:none;cursor:not-allowed}
+.padam .utama{box-shadow:none}
+.panggung .kode{cursor:pointer}
+.panggung .kode:focus-visible{outline:.4mm solid #b8121f;outline-offset:.4mm}
+.sorot{animation:sorot 1.4s ease-out}
+@keyframes sorot{0%,40%{box-shadow:0 0 0 3px #fff,0 0 0 7px var(--gold-l)}100%{box-shadow:0 0 0 3px rgba(255,255,255,0),0 0 0 7px rgba(220,194,150,0)}}
+
+.segel{display:flex;align-items:center;justify-content:center;gap:10px;margin:22px auto 0;padding:9px 16px 9px 10px;width:max-content;
+  max-width:100%;border:1px solid var(--hair);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-l)}
+.segel b{flex:none;width:20px;height:20px;border-radius:50%;background:linear-gradient(140deg,#ecd9b3,#b3925a);color:var(--ink);
+  display:flex;align-items:center;justify-content:center;font-size:12px;letter-spacing:0}
+.segel.mati{color:#f0a3a9;border-color:rgba(213,80,90,.5)}
+.segel.mati b{background:var(--red);color:#fff}
+.catatan{margin:16px auto 0;max-width:300px;color:var(--soft);font-size:14px;text-align:center}
+
+.utama{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:24px;padding:17px 20px;
+  background:linear-gradient(135deg,#ecd9b3 0%,#c9a970 55%,#b3925a 100%);color:var(--ink);text-decoration:none;
+  font-weight:600;font-size:16px;box-shadow:0 12px 30px rgba(179,146,90,.22)}
+.utama small{display:block;font-weight:500;font-size:12px;color:rgba(12,20,36,.72);margin-top:2px;letter-spacing:.04em}
+.utama i{font-style:normal;font-size:20px}
+.dua{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+.kotak{padding:14px 10px;background:none;border:1px solid var(--hair);color:var(--ivory);font:500 14px var(--sans);cursor:pointer;
+  text-align:center}
+.kotak small{display:block;font-weight:400;font-size:11px;color:var(--soft);margin-top:2px}
+.daftar{margin-top:14px;border-top:1px solid var(--rule)}
+.baris{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;padding:15px 4px;
+  background:none;border:0;border-bottom:1px solid var(--rule);color:var(--ivory);font:500 15px var(--sans);
+  text-decoration:none;text-align:left;cursor:pointer}
+.baris small{display:block;font-weight:400;font-size:12px;color:var(--soft);margin-top:2px}
+.baris i{font-style:normal;color:var(--gold);font-size:17px}
+.utama:focus-visible,.baris:focus-visible,.kotak:focus-visible,.panggung:focus-visible{outline:1px solid var(--gold-l);outline-offset:3px}
+
+.pasang{margin-top:22px;text-align:center}
+.tautan{background:none;border:0;padding:6px;color:var(--gold-l);font:500 13px var(--sans);text-decoration:underline;
+  text-underline-offset:4px;cursor:pointer}
+.cara{margin:12px auto 0;max-width:330px;padding:14px 16px;border:1px solid var(--hair);font-size:13px;line-height:1.6;color:var(--soft);text-align:left}
+.cara b{color:var(--ivory);font-weight:500}
+.kaki{margin-top:30px;text-align:center;font-size:9.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--soft)}
+.kaki em{display:block;margin-top:6px;font-family:var(--serif);font-size:14px;letter-spacing:.02em;text-transform:none;color:var(--gold-l)}
+.roti{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);padding:10px 18px;background:var(--ivory);color:var(--ink);
+  font-size:14px;font-weight:500;opacity:0;pointer-events:none;transition:.3s;z-index:5}
+.roti.tampil{opacity:1;transform:translate(-50%,0)}
+.kosong{text-align:center;padding:40px 6px 0}
+.kosong img{height:34px}
+.kosong h1{font-family:var(--serif);font-weight:500;font-size:28px;margin:28px 0 0;color:#fff}
+</style>
+</head>
+<body>
+<main class="hal" id="hal"></main>
+<div class="roti" id="roti" role="status"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<script src="data.js"></script>
+<script src="kartu.js"></script>
+<script>
+(function () {
+  var D = window.SKN_KARTU, el = document.getElementById("hal"), aman = window.sknAman;
+  var id = (new URLSearchParams(location.search).get("id") || "").trim().toLowerCase();
+  var kantor = '<a class="baris" href="https://wa.me/' + D.kantor.wa +
+    '"><span>Hubungi Kantor SKN<small>Untuk konfirmasi atau keluhan</small></span><i>&rarr;</i></a>';
+  var kaki = '<footer class="kaki">' + aman(D.perusahaan) + '<em>Sejak 2002</em></footer>';
+
+  function pesan(judul, isi, ulang) {
+    el.innerHTML = '<div class="kosong"><img src="logo.png" alt="SKN"><h1>' + judul + '</h1>' +
+      '<p class="catatan">' + isi + '</p></div>' +
+      (ulang ? '<div class="dua" style="grid-template-columns:1fr;margin-top:24px"><button class="kotak" id="ulang" type="button">Coba lagi</button></div>' : "") +
+      '<div class="daftar" style="margin-top:30px">' + kantor + '</div>' + kaki;
+    var u = document.getElementById("ulang");
+    if (u) u.onclick = function () { location.reload(); };
+  }
+
+  function tampil(o) {
+  var aktif = o.status === "AKTIF", url = D.dasar + "?id=" + o.id;
+  /* Tautan untuk DIBAGIKAN: folder per orang, supaya pratinjau di WA menampilkan kartu orang ini. */
+  var folder = encodeURIComponent(o.id) + "/", urlBagi = D.dasar + folder;
+  var h = '<div class="label">ID Card Digital' + (o.contoh ? '<b>Contoh</b>' : "") + '</div>' +
+    '<div class="panggung' + (aktif ? "" : " mati") + '" id="panggung">' +
+    '<div class="skala" id="skala"><div class="balik">' + sknDepan(o, D, false, "Pindai atau ketuk") + '</div></div>' +
+    (aktif ? "" : '<div class="cap">Tidak aktif</div>') + '</div>';
+
+  if (aktif) {
+    var pesan = encodeURIComponent("Halo " + o.nama + ", saya dapat nomor Anda dari ID card SKN.");
+    h += '<div class="segel"><b>&#10003;</b>Karyawan aktif SKN</div>' +
+      '<a class="utama" id="kontak" href="https://wa.me/' + o.wa + '?text=' + pesan + '"><span>Chat WhatsApp<small>' +
+        sknNomor(o.wa) + ' &middot; nomor kantor</small></span><i>&rarr;</i></a>' +
+      '<div class="dua"><button class="kotak" id="simpan" type="button">Simpan Kontak<small>ke kontak HP Anda</small></button>' +
+      '<button class="kotak" id="bagi" type="button">Bagikan<small>kirim kartu ini</small></button></div>' +
+      '<div class="daftar"><a class="baris" href="tel:+' + o.wa + '"><span>Telepon</span><i>&rarr;</i></a>' +
+      '<a class="baris" href="' + D.kantor.web + '"><span>Website SKN<small>Profil, depo, dan store</small></span><i>&rarr;</i></a>' +
+      kantor + '</div>';
+  } else {
+    h += '<div class="segel mati"><b>!</b>Sudah tidak aktif</div>' +
+      '<p class="catatan">Orang ini tidak lagi mewakili ' + aman(D.perusahaan) + '.</p>' +
+      /* Tombol kontak tetap terlihat tetapi MATI: bukan tautan, tanpa nomor, tidak bisa diklik. */
+      '<div class="padam" aria-hidden="true"><div class="utama"><span>Chat WhatsApp<small>Tidak tersedia</small></span><i>&times;</i></div>' +
+      '<div class="dua"><div class="kotak">Simpan Kontak<small>tidak tersedia</small></div>' +
+      '<div class="kotak">Bagikan<small>tidak tersedia</small></div></div>' +
+      '<div class="daftar"><div class="baris"><span>Telepon</span><i>&times;</i></div>' +
+      '<div class="baris"><span>Website SKN</span><i>&times;</i></div></div></div>' +
+      '<div class="daftar" id="kontak" style="margin-top:0;border-top:0">' + kantor + '</div>';
+  }
+  if (aktif) h += '<div class="pasang"><button class="tautan" id="pasang" type="button">Ini kartu Anda? Pasang di layar utama HP</button>' +
+    '<div class="cara" id="cara" hidden><b>Android (Chrome):</b> ketuk &#8942; di kanan atas, lalu <i>Tambahkan ke layar utama</i>.<br>' +
+    '<b>iPhone (Safari):</b> ketuk tombol Bagikan, lalu <i>Tambahkan ke Layar Utama</i>.<br>' +
+    'Setelah itu kartu ini terbuka dengan satu ketukan, seperti aplikasi.</div></div>';
+  el.innerHTML = h + kaki;
+  document.title = o.nama + " - ID Card SKN";
+
+  /* Gambar kartu & manifest per orang (dibuat oleh alat\buat_bagikan.py). Tidak ada = fitur ini diam saja. */
+  var gambarKartu = null;
+  if (aktif) {
+    fetch(folder + "kartu.jpg").then(function (r) { if (!r.ok) throw 0; return r.blob(); })
+      .then(function (bl) { gambarKartu = new File([bl], "ID-Card-" + o.nama.replace(/\s+/g, "-") + ".jpg", { type: "image/jpeg" }); })
+      .catch(function () {});
+    var m = document.createElement("link"); m.rel = "manifest"; m.href = folder + "manifest.json"; document.head.appendChild(m);
+  }
+  var pasang = document.getElementById("pasang");
+  if (pasang) pasang.onclick = function () {
+    if (window.sknPasang) { window.sknPasang.prompt(); window.sknPasang = null; return; }
+    var c = document.getElementById("cara"); c.hidden = !c.hidden;
+  };
+
+  /* Perbesar kartu 54 mm supaya selebar panggung */
+  var panggung = document.getElementById("panggung"), skala = document.getElementById("skala");
+  function ukur() { skala.style.transform = "scale(" + (panggung.clientWidth / skala.offsetWidth) + ")"; }
+  ukur(); window.addEventListener("resize", ukur);
+  /* QR di kartu bisa diketuk: membawa ke tombol kontak (hasil yang sama dengan memindai). */
+  var qr = panggung.querySelector(".kode"), tuju = document.getElementById("kontak");
+  if (qr && tuju) {
+    qr.setAttribute("role", "button"); qr.setAttribute("tabindex", "0"); qr.setAttribute("aria-label", "Buka kontak");
+    var buka = function () {
+      tuju.scrollIntoView({ behavior: "smooth", block: "center" });
+      tuju.classList.remove("sorot"); void tuju.offsetWidth; tuju.classList.add("sorot");
+    };
+    qr.addEventListener("click", buka);
+    qr.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); buka(); } });
+  }
+
+  var roti = document.getElementById("roti"), jeda;
+  function kabar(t) { roti.textContent = t; roti.classList.add("tampil"); clearTimeout(jeda);
+    jeda = setTimeout(function () { roti.classList.remove("tampil"); }, 2200); }
+
+  var s = document.getElementById("simpan");
+  if (s) s.onclick = function () {
+    var v = ["BEGIN:VCARD", "VERSION:3.0", "N:;" + o.nama + ";;;", "FN:" + o.nama + " (SKN)",
+      "ORG:" + D.perusahaan, "TITLE:" + o.jabatan + (o.wilayah ? " - " + o.wilayah : ""), "TEL;TYPE=CELL:+" + o.wa,
+      "URL:" + urlBagi, "END:VCARD"].join("\r\n");
+    var a = document.createElement("a");
+    a.href = URL.createObjectURL(new Blob([v], { type: "text/vcard" }));
+    a.download = o.nama.replace(/\s+/g, "-") + "-SKN.vcf";
+    document.body.appendChild(a); a.click(); a.remove();
+  };
+
+  var b = document.getElementById("bagi");
+  if (b) b.onclick = function () {
+    var judul = o.nama + " - " + D.perusahaan, teks = "ID card digital " + o.nama + " (" + o.jabatan + ", " + D.perusahaan + ")";
+    function salin() {
+      if (navigator.clipboard && navigator.clipboard.writeText)
+        navigator.clipboard.writeText(urlBagi).then(function () { kabar("Tautan disalin"); }, function () { kabar(urlBagi); });
+      else kabar(urlBagi);
+    }
+    if (!navigator.share) return salin();
+    /* Utama: gambar kartu + tautan dalam satu kiriman. Tidak didukung -> tautan saja. */
+    var denganGambar = gambarKartu && navigator.canShare && navigator.canShare({ files: [gambarKartu] });
+    var isi = denganGambar ? { files: [gambarKartu], title: judul, text: teks + "\n" + urlBagi } : { title: judul, text: teks, url: urlBagi };
+    navigator.share(isi).catch(function (e) {
+      if (e && e.name === "AbortError") return;            /* pengguna membatalkan */
+      if (denganGambar) navigator.share({ title: judul, text: teks, url: urlBagi }).catch(function () {});
+      else salin();
+    });
+  };
+  }   /* akhir tampil */
+
+  function selesai(j) {
+    if (j && j.ok && j.orang) return tampil(j.orang);
+    if (j && j.alasan === "gagal-muat")
+      return pesan("Kartu belum bisa dimuat", "Periksa sambungan internet Anda, lalu coba lagi.", true);
+    pesan("Kartu tidak ditemukan", "Kode ini tidak terdaftar di " + aman(D.perusahaan) +
+      ". Mohon konfirmasi ke kantor sebelum bertransaksi.", false);
+  }
+
+  /* Sumber data: Google Sheet lewat Apps Script (D.api). Tanpa D.api -> daftar di data.js. */
+  var api = D.api || "";
+  if (/^(localhost|127\.0\.0\.1)$/.test(location.hostname)) {          /* hanya untuk uji di laptop */
+    var uji = new URLSearchParams(location.search).get("api");
+    if (uji) api = uji;
+  }
+  if (!api) {
+    var o = null;
+    for (var i = 0; i < (D.orang || []).length; i++) if (D.orang[i].id === id) o = D.orang[i];
+    return selesai(o ? { ok: true, orang: o } : { ok: false, alasan: "tidak-ditemukan" });
+  }
+  el.innerHTML = '<div class="kosong"><img src="logo.png" alt="SKN"><p class="catatan" style="margin-top:28px">Memuat kartu&hellip;</p></div>';
+  fetch(api, { method: "POST", headers: { "Content-Type": "text/plain;charset=utf-8" },
+    body: JSON.stringify({ aksi: "kartu", id: id }) })
+    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(selesai, function () { selesai({ ok: false, alasan: "gagal-muat" }); });
+})();
+</script>
+</body>
+</html>

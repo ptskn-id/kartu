@@ -1,0 +1,43 @@
+/* Desain kartu ID SKN (54 x 86 mm, berdiri). Dipakai lembar cetak DAN halaman ID card digital. */
+.tag{--ink:#0c1424;--paper:#fbfaf7;--ivory:#f3efe7;--soft:#a7afbf;--muted:#5d6473;--red:#b8121f;--gold:#b3925a;--gold-l:#dcc296;
+  --serif:"Playfair Display",Georgia,serif;--sans:"Inter",system-ui,"Segoe UI",sans-serif;
+  position:relative;width:54mm;height:86mm;border-radius:3mm;overflow:hidden;display:flex;flex-direction:column;
+  background:var(--paper);color:var(--ink);font-family:var(--sans);text-align:left;line-height:1.5}
+.tag,.tag *{box-sizing:border-box;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.tag .zona{position:relative;flex:1;overflow:hidden;
+  background:radial-gradient(90% 70% at 78% 8%,#22335a 0%,rgba(34,51,90,0) 65%),linear-gradient(165deg,#16223d 0%,#0c1424 58%,#080d18 100%)}
+.tag .latar{position:absolute;width:66mm;max-width:none;left:-21mm;bottom:-17mm;opacity:.62}
+.tag .merek{position:absolute;left:4mm;top:4.7mm;height:3.9mm}
+.tag .visi{position:absolute;right:4mm;top:4.6mm;width:27mm;text-align:right;font-family:"Cinzel",var(--serif);font-weight:700;
+  font-size:2.05mm;line-height:1.45;letter-spacing:.12em;text-transform:uppercase;color:#fff}
+.tag .visi::after{content:"";display:block;width:7mm;height:.35mm;margin:1.3mm 0 0 auto;background:var(--gold-l)}
+.tag .orang{position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:37mm;height:39mm;display:flex;align-items:flex-end;justify-content:center}
+.tag .orang img,.tag .orang svg{display:block;width:100%;height:100%;object-fit:contain;object-position:bottom}
+.tag .orang.potong{width:52mm;height:43mm;filter:drop-shadow(0 1mm 2.5mm rgba(0,0,0,.45))}
+.tag .orang.bingkai{width:31mm;height:38.5mm;border-radius:15.5mm 15.5mm 0 0;overflow:hidden;border:.3mm solid var(--gold-l);border-bottom:0;
+  box-shadow:0 0 0 1.1mm rgba(12,20,36,.55)}
+.tag .orang.bingkai img{object-fit:cover}
+.tag .inisial{position:absolute;left:0;right:0;bottom:6.5mm;text-align:center;font-family:var(--serif);font-size:6mm;color:var(--gold-l)}
+.tag .garis{flex:none;height:.8mm;background:linear-gradient(90deg,var(--red) 0%,var(--red) 62%,var(--gold-l) 100%)}
+.tag .strip{flex:none;height:28.5mm;padding:0 2.6mm 0 3.6mm;display:flex;align-items:center;gap:2mm}
+.tag .info{flex:1;min-width:0}
+.tag .nama{font-family:var(--serif);font-weight:600;font-size:4.1mm;line-height:1.12}
+.tag .nama.panjang{font-size:3.5mm}
+.tag .jab{font-size:1.75mm;letter-spacing:.2em;text-transform:uppercase;color:var(--red);font-weight:600;margin-top:1.5mm;line-height:1.4}
+.tag .wil{font-size:2.15mm;color:var(--muted);margin-top:.7mm}
+.tag .kode{display:block;flex:none;width:23.5mm;text-align:center;text-decoration:none}
+.tag .kode svg{display:block;width:100%;height:auto}
+.tag .kode div{font-size:1.4mm;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-top:.4mm}
+
+.tag.belakang{background:linear-gradient(170deg,#16223d 0%,#0c1424 55%,#080d18 100%);color:var(--ivory)}
+.tag.belakang .latar{width:84mm;left:-15mm;top:-9mm;bottom:auto;opacity:.95}
+.tag.belakang::after{content:"";position:absolute;left:0;right:0;bottom:0;height:52mm;
+  background:linear-gradient(180deg,rgba(9,14,26,0) 0%,rgba(9,14,26,.9) 42%,#080d18 70%)}
+.tag .teks{position:absolute;z-index:1;left:5mm;right:5mm;bottom:5mm;text-align:center}
+.tag .teks blockquote{margin:0;font-family:"Cinzel",var(--serif);font-weight:700;font-size:3.5mm;line-height:1.4;letter-spacing:.1em;
+  text-transform:uppercase;color:#fff}
+.tag .teks hr{border:0;height:.15mm;width:14mm;margin:3mm auto;background:var(--gold)}
+.tag .teks .pt{font-size:1.6mm;letter-spacing:.2em;text-transform:uppercase}
+.tag .teks .web{font-size:2mm;color:var(--soft);margin-top:.8mm}
+.tag .teks .temu{font-size:1.6mm;line-height:1.5;color:var(--soft);margin-top:2.4mm}
+.tag .teks .temu b{color:var(--gold-l);font-weight:500}
