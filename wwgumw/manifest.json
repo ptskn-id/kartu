@@ -1,0 +1,21 @@
+{
+ "name": "ID Card SKN - Niela Mahila",
+ "short_name": "ID Card SKN",
+ "start_url": "../?id=wwgumw",
+ "scope": "../",
+ "display": "standalone",
+ "background_color": "#070b14",
+ "theme_color": "#070b14",
+ "icons": [
+  {
+   "src": "../ikon.png",
+   "sizes": "192x192",
+   "type": "image/png"
+  },
+  {
+   "src": "../ikon-512.png",
+   "sizes": "512x512",
+   "type": "image/png"
+  }
+ ]
+}
