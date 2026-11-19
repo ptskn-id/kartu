@@ -5,7 +5,7 @@ window.SKN_KARTU = {
   /* Alamat web app Apps Script (Google Sheet HRD). Terisi = data diambil dari Sheet; kosong = pakai daftar "orang" di bawah. */
   api: "https://script.google.com/macros/s/AKfycbyQSnGu_-V0x0tvawbGSVqpMVc4rR37yHsb6-zVlVmDNM8JpGc-aDR7zZCmP0cZGI46ZQ/exec",
   perusahaan: "PT Satelit Komunika Nusantara",
-  kantor: { wa: "628117566789", web: "https://claudeunistar.github.io/skn/" },
+  kantor: { wa: "628117566789", web: "https://ptskn-id.github.io/" },
   orang: []
 };
 
